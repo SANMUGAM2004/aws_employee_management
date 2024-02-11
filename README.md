@@ -17,19 +17,21 @@ Technologies Used
     Boto3: Python SDK for interacting with Amazon Web Services (AWS).
     Amazon S3: Cloud storage service for storing employee images.
 
-    
-To install:(commands)
-    sudo dnf update -y
-    sudo dnf install mariadb105
-    sudo yum update -y
-    sudo yum install git -y
-    sudo dnf install python3
-    sudo dnf install python3-pip
-    pip3 install pymysql boto3
-    sudo dnf install python3-flask
-    sudo dnf install python3-pymysql
-    sudo pip install PyMysql
-    sudo python3 -m pip install boto3
+
+    To install:(commands)
+        sudo dnf update -y
+        sudo dnf install mariadb105
+        sudo yum update -y
+        sudo yum install git -y
+        sudo dnf install python3
+        sudo dnf install python3-pip
+        pip3 install pymysql boto3
+        sudo dnf install python3-flask
+        sudo dnf install python3-pymysql
+        sudo pip install PyMysql
+        sudo python3 -m pip install boto3
+
+
 
 Setup Instructions
 
