@@ -1,0 +1,6 @@
+host = "empdb.cxi8ww8meon7.ap-south-1.rds.amazonaws.com"
+user = "admin"
+password = "12345678"
+db = "employee"
+bucket = "empbucket2024"
+region = "ap-south-1"
