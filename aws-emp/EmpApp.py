@@ -71,9 +71,21 @@ def getemp():
 
 @app.route("/fetchdata", methods=['POST'])
 def GetEmp():
+    search_type = request.form.get('search_type')
+    search_value = request.form.get('search_value')
     emp_id = request.form.get('emp_id')
+
+    if search_type == 'emp_id':
+        query = f"SELECT * FROM empdet WHERE emp_id = {search_value}"
+    elif search_type == 'emp_name':
+        query = f"SELECT * FROM empdet WHERE first_name LIKE '%{search_value}%' OR last_name LIKE '%{search_value}%'"
+    elif search_type == 'primary_skills':
+        query = f"SELECT * FROM empdet WHERE pri_skill LIKE '%{search_value}%'"
+    else:
+        return "Invalid search type"
+
     cursor = db_conn.cursor()
-    cursor.execute(f"SELECT * FROM empdet WHERE emp_id = {emp_id}")
+    cursor.execute(query)
     result = cursor.fetchall()
     cursor.close()
     
