@@ -89,19 +89,30 @@ def GetEmp():
     result = cursor.fetchall()
     cursor.close()
     
-    s3 = boto3.client('s3')
-    bucket_location = s3.get_bucket_location(Bucket=bucket_new)
-    s3_location = bucket_location['LocationConstraint']
+    # s3 = boto3.client('s3')
+    # bucket_location = s3.get_bucket_location(Bucket=bucket_new)
+    # s3_location = bucket_location['LocationConstraint']
 
-    if s3_location is None:
-        s3_location = ''
-    else:
-        s3_location = '-' + s3_location
+    # s3 = boto3.client('s3')
+    # bucket_location = s3.get_bucket_location(Bucket=bucket_new)
+    # s3_location = bucket_location['LocationConstraint']
 
-    object_key = f"emp-id-{emp_id}_image_file"
-    image_url = f"https://s3{s3_location}.amazonaws.com/{bucket_new}/{object_key}"
+    # if s3_location is None:
+    #     s3_location = ''
+    # else:
+    #     s3_location = '-' + s3_location
 
-    return render_template('GetEmpOutput.html', output=result, image_url=image_url)
+    # object_key = f"emp-id-{search_value}_image_file"
+
+    # # Construct the image URL using the S3 bucket URL format
+    # image_url = f"https://empbucket2024.s3.{region_new}.amazonaws.com/{object_key}"
+
+     
+    # print(object_key)
+    # print(image_url)
+
+
+    return render_template('GetEmpOutput.html', output=result)
 
     
 
